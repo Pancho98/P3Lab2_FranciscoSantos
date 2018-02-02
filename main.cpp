@@ -36,11 +36,7 @@ int main(){
 			}
 			break;
 			case 3:{
-				int num;	   
-				cout<<"Ingrese un numero"<<endl;
-				cin>>num;
-				int fact=factorial(num);
-				cout<<"El factorial es"<<fact<<endl;
+				
 		    }
 			break;
 			case 4:{
@@ -139,13 +135,15 @@ void Segundo(){
 }
 
 void Tercero(){
-	int secuencia;
+	int numero;
 	cout<<"Ingrese el numero que desee que llegue la secuencia catalan: "<<endl;
-	cin>>secuencia;
-
-	for(int i=0;i<secuencia;i++){
-		
+	cin>>numero;
+	int secuencia;
+	for(int i=0;i<numero;i++){
+		secuencia=(factorial(2*numero))/(factorial(numero+1)*(factorial(n)));
+		cout<<secuencia<<" ";
 	}
+	cout<<""<<endl;
 }
 
 void previo(int numero){
