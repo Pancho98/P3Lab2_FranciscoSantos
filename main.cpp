@@ -13,8 +13,8 @@ void Segundo();
 void Tercero();
 //calculo del previo 
 void previo(int);
-
-//
+//factorial recursivo
+int factorial(int);
 
 int main(){
 	int opcion =1;	
@@ -27,19 +27,25 @@ int main(){
 		cout<< "4. Salir del Programa"<<endl;
 		cin>>opcion;	
 		switch(opcion){
-			case 1:
+			case 1:{
 				Primero();
-				   
+		    }
 			break;
-			case 2:
+			case 2:{
 				Segundo();
-
+			}
 			break;
-			case 3:
-
-
+			case 3:{
+				int num;	   
+				cout<<"Ingrese un numero"<<endl;
+				cin>>num;
+				int fact=factorial(num);
+				cout<<"El factorial es"<<fact<<endl;
+		    }
 			break;
-			case 4:
+			case 4:{
+					   
+				   }
 
 
 			break;
@@ -136,6 +142,10 @@ void Tercero(){
 	int secuencia;
 	cout<<"Ingrese el numero que desee que llegue la secuencia catalan: "<<endl;
 	cin>>secuencia;
+
+	for(int i=0;i<secuencia;i++){
+		
+	}
 }
 
 void previo(int numero){
@@ -150,4 +160,13 @@ void previo(int numero){
 	if(acum!=numero){
 		previo(numero-1);
 	}
+}
+
+int factorial(int numero){
+	if(numero==0){
+		return 1;
+	}else{
+		return numero*factorial(numero-1);
+	}
+
 }
