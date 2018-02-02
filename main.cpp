@@ -14,7 +14,8 @@ void Tercero();
 //calculo del previo 
 void previo(int);
 //factorial recursivo
-int factorial(int);
+long int factorial(long int);
+
 
 int main(){
 	int opcion =1;	
@@ -135,10 +136,10 @@ void Segundo(){
 }
 
 void Tercero(){
-	int numero;
+	long int numero;
 	cout<<"Ingrese el numero que desee que llegue la secuencia catalan: "<<endl;
 	cin>>numero;
-	int secuencia;
+	long int secuencia;
 	cout<<"La secuencia es = ";
 	for(int i=0;i<=numero;i++){
 		if(i==0){
@@ -165,7 +166,7 @@ void previo(int numero){
 	}
 }
 
-int factorial(int numero){
+long int factorial(long int numero){
 	if(numero==0){
 		return 1;
 	}else{
