@@ -36,7 +36,7 @@ int main(){
 			}
 			break;
 			case 3:{
-				
+				Tercero();
 		    }
 			break;
 			case 4:{
@@ -139,9 +139,13 @@ void Tercero(){
 	cout<<"Ingrese el numero que desee que llegue la secuencia catalan: "<<endl;
 	cin>>numero;
 	int secuencia;
-	for(int i=0;i<numero;i++){
-		secuencia=(factorial(2*numero))/(factorial(numero+1)*(factorial(n)));
-		cout<<secuencia<<" ";
+	for(int i=0;i<=numero;i++){
+		if(i==0){
+			cout<<"1 ";
+		}else
+			secuencia=(factorial(2*i))/(factorial(i+1)*(factorial(i)));
+			cout<<secuencia<<" ";
+		}
 	}
 	cout<<""<<endl;
 }
