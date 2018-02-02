@@ -139,6 +139,7 @@ void Tercero(){
 	cout<<"Ingrese el numero que desee que llegue la secuencia catalan: "<<endl;
 	cin>>numero;
 	int secuencia;
+	cout<<"La secuencia es = ";
 	for(int i=0;i<=numero;i++){
 		if(i==0){
 			cout<<"1 ";
