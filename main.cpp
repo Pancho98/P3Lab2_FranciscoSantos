@@ -142,12 +142,12 @@ void Tercero(){
 	for(int i=0;i<=numero;i++){
 		if(i==0){
 			cout<<"1 ";
-		}else
+		}else{
 			secuencia=(factorial(2*i))/(factorial(i+1)*(factorial(i)));
 			cout<<secuencia<<" ";
 		}
 	}
-	cout<<""<<endl;
+	cout<<endl;
 }
 
 void previo(int numero){
