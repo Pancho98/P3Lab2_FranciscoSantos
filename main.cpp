@@ -3,15 +3,16 @@
 #include <iostream>
 using namespace std;
 
+#define PI 3.14159265
+
 //Primer Problema
 void Primero();
 //Segundo Problema
 void Segundo();
 //Tercer Problema
 void Tercero();
-//
-
-//
+//calculo del previo 
+void previo(int);
 
 //
 
@@ -31,7 +32,7 @@ int main(){
 				   
 			break;
 			case 2:
-
+				Segundo();
 
 			break;
 			case 3:
@@ -59,24 +60,54 @@ void Primero(){
 		cin>>opcion;
 		
 		switch(opcion){
-			case 1:
-
+			case 1:{
+				int acum=0;
+				int numero;
+				cout<<"Ingrese el numero que desea calcular: "<<endl;
+				cin>>numero;
+				for(int i=0;i<numero;i++){
+					acum+=i;
+					if(acum==numero){
+						cout<<"El numero "<<numero<<" es Triangular"<<endl;
+						break;
+					}
+				}
+				if(acum!=numero){
+					cout<<"El numero "<<numero<<" no es Triangular"<<endl;
+				}
+			}
 				   
 	        break;
-			case 2:
-
-
+			case 2:{
+				int random=0;
+				random=rand()% 100+1;
+				cout<<"El Random es: "<<random<<endl;
+				int acum=0;
+				for(int i=0;i<random;i++){
+					acum+=i;
+					if(acum==random){
+						cout<<"El numero es Triangular";
+						break;
+					}
+				}
+				if(acum!=random){
+					cout<<"El numero no es Triangular "<<endl;
+				}
+			}
 			break;
-			case 3:
-
-
+			case 3:{
+				int calcular;
+				cout<<"Ingrese un numero: "<<endl;
+				cin>>calcular;
+				previo(calcular);
+			}
 			break;
 		}
 	}
 }
 
 void Segundo(){
-	int lado_a,lado_b,lado_c;
+	double lado_a,lado_b,lado_c;
 	cout<<"Ingrese el lado a: "<<endl;
 	cin>>lado_a;
 	cout<<"Ingrese el lado b: "<<endl;
@@ -84,11 +115,39 @@ void Segundo(){
 	cout<<"Ingrese el lado c: "<<endl;
 	cin>>lado_c;
 	
-	
+	double s = (lado_a+lado_b+lado_c)/2;
+	double area=sqrt(s*((s-lado_a)*(s-lado_b)*(s-lado_c)));
+	double angulo_a= acos((pow(lado_b,2.0)+(pow(lado_c,2.0)-pow(lado_a,2.0)))/(2.0*lado_b*lado_c))*180/PI;
+	double angulo_b= acos((pow(lado_a,2.0)+(pow(lado_c,2.0)-pow(lado_b,2.0)))/(2.0*lado_a*lado_c))*180/PI;
+	double angulo_c=180-angulo_a-angulo_b;
+
+	cout<<"El angulo a= "<<angulo_a<<endl;
+	cout<<"El angulo b= "<<angulo_b<<endl;
+	cout<<"El angulo c= "<<180-angulo_a-angulo_b<<endl;
+	cout<<"El area de el Trangulo es: "<<area<<endl;
+	if(angulo_a==90 || angulo_b==90 || angulo_c==90){
+		cout<<"EL triangulo es Rectangulo"<<endl;
+	}else{
+		cout<<"El triangulo no es Rectangulo"<<endl;
+	}
 }
 
 void Tercero(){
 	int secuencia;
 	cout<<"Ingrese el numero que desee que llegue la secuencia catalan: "<<endl;
 	cin>>secuencia;
+}
+
+void previo(int numero){
+	int acum=0;
+	for(int i=0;i<numero;i++){
+		acum+=i;
+		if(acum==numero){
+			cout<<"El numero "<<numero<<" es un Triangular"<<endl;
+			break;
+		}
+	}
+	if(acum!=numero){
+		previo(numero-1);
+	}
 }
